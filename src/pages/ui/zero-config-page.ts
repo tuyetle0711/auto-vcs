@@ -38,8 +38,6 @@ export class ZeroConfigPage extends CommonPage {
    * @param page page number
    */
   async clickOnPagingButton(page: number): Promise<void> {
-    if (page > 1) {
-      await this.clickOnElement(`//button[@class='dt-paging-button'][${page}]`);
-    }
+    await this.clickOnElement(`//button[text()='${page}']`);
   }
 }

@@ -19,7 +19,7 @@ test.describe("Feature zero configuation", async () => {
   });
 
   test(`Test case 1 @TC_01`, async ({ conf }) => {
-    await test.step(`Sort theo cột "Start date", thứ tự tăng dần`, async () => {
+    await test.step(`Sort theo cột "Salary", thứ tự giảm dần`, async () => {
       await zeroConfigPage.sortTableByColumn(sortColumn, sortType);
     });
 
@@ -45,7 +45,7 @@ test.describe("Feature zero configuation", async () => {
   });
 
   test(`Test case 2 @TC_02`, async ({}) => {
-    await test.step(`Sort theo cột "Salary", thứ tự giảm dần`, async () => {
+    await test.step(`Sort theo cột "Start date", thứ tự tăng dần`, async () => {
       await zeroConfigPage.sortTableByColumn(sortColumn, sortType);
     });
 

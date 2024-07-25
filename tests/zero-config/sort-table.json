@@ -6,7 +6,7 @@
     },
     "cases": {
         "TC_01": {
-            "sort_column": "Age",
+            "sort_column": "Salary",
             "sort_type": "descending",
             "page_number": 5,
             "min_age": 30,
