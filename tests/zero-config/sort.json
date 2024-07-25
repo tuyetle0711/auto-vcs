@@ -1,0 +1,21 @@
+{
+    "env": {
+        "dev": {
+            "domain": "datatables.net"
+        }
+    },
+    "cases": {
+        "TC_01": {
+            "sort_column": "Age",
+            "sort_type": "descending",
+            "page_number": 5,
+            "min_age": 30,
+            "max_age": 40
+        },
+        "TC_02": {
+            "sort_column": "Start date",
+            "sort_type": "ascending",
+            "page_number": 5
+        }
+    }
+}
