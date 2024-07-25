@@ -8,17 +8,19 @@ export class ZeroConfigPage extends CommonPage {
   /**
    * Go to zero configuration page
    */
-  async gotoZeroConfigPage() {
+  async gotoZeroConfigPage(): Promise<void> {
     await this.goto(`/examples/basic_init/zero_configuration.html`);
-    await this.page.waitForLoadState("domcontentloaded");
   }
 
   /**
    * Sort table by column
-   * @column is comlunn name
-   * @sortType is "descending" or "ascending"
+   * @param column is comlunn name
+   * @param sortType is "descending" or "ascending"
    */
-  async sortTableByColumn(column: string, sortType: "descending" | "ascending") {
+  async sortTableByColumn(
+    column: string,
+    sortType: "descending" | "ascending"
+  ): Promise<void> {
     const xpathColumn = `//th[contains(@aria-label, '${column}')]`;
 
     // Click on the column header to sort the table
@@ -28,16 +30,15 @@ export class ZeroConfigPage extends CommonPage {
     if (sortType !== (await this.page.getAttribute(xpathColumn, "aria-sort"))) {
       await this.page.click(xpathColumn);
     }
-
     await this.page.waitForLoadState("domcontentloaded");
   }
 
   /**
    * Click on paging button
-   * @page page number
+   * @param page page number
    */
-  async clickOnPagingButton(page: number) {
-    if(page > 1) {
+  async clickOnPagingButton(page: number): Promise<void> {
+    if (page > 1) {
       await this.clickOnElement(`//button[@class='dt-paging-button'][${page}]`);
     }
   }
